@@ -1,0 +1,29 @@
+{
+  "pkg:generic/openssl@1.1.1k": [
+    {
+      "id": "EXAMPLE-2026-0001",
+      "severity": "critical",
+      "exploited": true,
+      "fixedIn": "3.0.15",
+      "summary": "Synthetic advisory for the demo: remote code execution, exploitation seen in the wild"
+    }
+  ],
+  "pkg:npm/lodash@4.17.15": [
+    {
+      "id": "EXAMPLE-2026-0002",
+      "severity": "high",
+      "exploited": false,
+      "fixedIn": "4.17.21",
+      "summary": "Synthetic advisory for the demo: prototype pollution"
+    }
+  ],
+  "pkg:generic/curl@7.76.0": [
+    {
+      "id": "EXAMPLE-2026-0003",
+      "severity": "medium",
+      "exploited": false,
+      "fixedIn": "8.5.0",
+      "summary": "Synthetic advisory for the demo"
+    }
+  ]
+}

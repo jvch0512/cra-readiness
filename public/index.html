@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<title>cra-readiness</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>cra-readiness</h1>
+    <p class="sub">Cyber Resilience Act readiness for manufacturers. Check an SBOM, self-assess against Annex I, find your conformity route and run the Article 14 reporting clock. Runs in this tab, nothing is uploaded.</p>
+  </div>
+</header>
+<nav id="tabs" role="tablist">
+  <button type="button" role="tab" data-tab="sbom" class="on">SBOM check</button>
+  <button type="button" role="tab" data-tab="assess">Assessment</button>
+  <button type="button" role="tab" data-tab="clock">Reporting clock</button>
+</nav>
+<main>
+  <section id="p-sbom" class="tab">
+    <div class="panel">
+      <div class="row"><h2>CycloneDX or SPDX JSON</h2><button type="button" id="sbom-sample">Load sample</button></div>
+      <textarea id="sbom-text" rows="8" spellcheck="false"></textarea>
+      <div class="row"><h2>Advisories keyed by package URL (optional)</h2><button type="button" id="adv-sample">Load sample</button></div>
+      <textarea id="adv-text" rows="5" spellcheck="false"></textarea>
+      <p class="hint">Advisories are yours to supply (OSV export, KEV join, internal tracker). The sample uses synthetic IDs.</p>
+    </div>
+    <div id="sbom-out"></div>
+  </section>
+  <section id="p-assess" class="tab" hidden>
+    <div class="panel">
+      <div class="row"><h2>Product profile JSON</h2><button type="button" id="prof-sample">Load sample</button></div>
+      <textarea id="prof-text" rows="12" spellcheck="false"></textarea>
+      <p class="hint">Uses the SBOM and advisories from the first tab when present. Answers: yes, partial, no. Missing answers count as no.</p>
+    </div>
+    <div id="assess-out"></div>
+  </section>
+  <section id="p-clock" class="tab" hidden>
+    <div class="panel grid">
+      <label>Kind<select id="clk-kind"><option value="vulnerability">Actively exploited vulnerability</option><option value="incident">Severe incident</option></select></label>
+      <label>Became aware (UTC)<input id="clk-aware" type="datetime-local"></label>
+      <label>Fix or mitigation available (UTC, optional)<input id="clk-fix" type="datetime-local"></label>
+    </div>
+    <div id="clock-out"></div>
+  </section>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

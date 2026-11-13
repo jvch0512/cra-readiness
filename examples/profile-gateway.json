@@ -1,0 +1,22 @@
+{
+  "name": "Acme IoT Gateway GW-200",
+  "role": "manufacturer",
+  "productClass": "important-1",
+  "supportYears": 3,
+  "answers": {
+    "p1-secure-default": "yes",
+    "p1-access": "yes",
+    "p1-confidentiality": "yes",
+    "p1-integrity": "yes",
+    "p1-attack-surface": "yes",
+    "p2-sbom": "yes",
+    "p2-secure-distribution": "yes",
+    "p1-updates": "partial",
+    "p1-logging": "partial",
+    "p2-remediate": "partial",
+    "p2-testing": "partial",
+    "p1-availability": "partial",
+    "p1-mitigation": "no",
+    "p2-cvd": "no"
+  }
+}

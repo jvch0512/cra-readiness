@@ -1,0 +1,28 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm test
+      - name: Sample outputs are up to date
+        run: |
+          node dist/src/cli.js sbom examples/sbom-gateway.cdx.json --vulns examples/advisories.json > /tmp/sbom.md || test $? -eq 1
+          diff /tmp/sbom.md docs/sample-sbom.md
+          node dist/src/cli.js assess examples/profile-gateway.json --sbom examples/sbom-gateway.cdx.json --vulns examples/advisories.json --today 2026-11-13 > /tmp/assess.md
+          diff /tmp/assess.md docs/sample-assess.md
+          node dist/src/cli.js clock --type vulnerability --aware 2026-11-13T10:00:00Z --fix 2026-11-20T10:00:00Z --now 2026-11-13T12:00:00Z > /tmp/clock.md
+          diff /tmp/clock.md docs/sample-clock.md
+          node dist/src/cli.js sbom examples/sbom-clean.cdx.json --min-score 90 > /dev/null
+          test "$(node dist/src/cli.js sbom examples/sbom-gateway.cdx.json --vulns examples/advisories.json >/dev/null; echo $?)" = "1"

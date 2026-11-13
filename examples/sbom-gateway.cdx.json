@@ -1,0 +1,238 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-02T09:30:00Z",
+    "authors": [
+      {
+        "name": "Acme Build Pipeline"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "express",
+      "version": "4.17.1",
+      "purl": "pkg:npm/express@4.17.1",
+      "supplier": {
+        "name": "OpenJS Foundation"
+      },
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lodash",
+      "version": "4.17.15",
+      "purl": "pkg:npm/lodash@4.17.15",
+      "supplier": {
+        "name": "OpenJS Foundation"
+      },
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "openssl",
+      "version": "1.1.1k",
+      "purl": "pkg:generic/openssl@1.1.1k",
+      "supplier": {
+        "name": "OpenSSL Project"
+      },
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "zlib",
+      "version": "1.2.11",
+      "purl": "pkg:generic/zlib@1.2.11",
+      "supplier": {
+        "name": "zlib"
+      },
+      "licenses": [
+        {
+          "license": {
+            "id": "Zlib"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "busybox",
+      "version": "1.33.0",
+      "purl": "pkg:generic/busybox@1.33.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-only"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mosquitto",
+      "version": "2.0.11",
+      "purl": "pkg:generic/mosquitto@2.0.11",
+      "supplier": {
+        "name": "Eclipse Foundation"
+      },
+      "licenses": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sqlite",
+      "version": "3.35.4",
+      "purl": "pkg:generic/sqlite@3.35.4",
+      "supplier": {
+        "name": "SQLite"
+      }
+    },
+    {
+      "type": "library",
+      "name": "curl",
+      "version": "7.76.0",
+      "purl": "pkg:generic/curl@7.76.0",
+      "supplier": {
+        "name": "curl"
+      },
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "vendor-sdk",
+      "supplier": {
+        "name": "Acme Components"
+      }
+    },
+    {
+      "type": "library",
+      "name": "jsonwebtoken",
+      "version": "8.5.1",
+      "purl": "pkg:npm/jsonwebtoken@8.5.1",
+      "supplier": {
+        "name": "Auth0"
+      },
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jsonwebtoken",
+      "version": "8.5.1",
+      "purl": "pkg:npm/jsonwebtoken@8.5.1",
+      "supplier": {
+        "name": "Auth0"
+      },
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "libpng",
+      "version": "1.6.37",
+      "purl": "pkg:generic/libpng@1.6.37",
+      "licenses": [
+        {
+          "license": {
+            "id": "Libpng"
+          }
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "app",
+      "dependsOn": [
+        "pkg:npm/express@4.17.1",
+        "pkg:npm/lodash@4.17.15",
+        "pkg:generic/openssl@1.1.1k",
+        "pkg:generic/mosquitto@2.0.11"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "cra-readiness",
+  "version": "1.0.0",
+  "description": "Cyber Resilience Act readiness for manufacturers: SBOM quality check (CycloneDX and SPDX JSON), Annex I self-assessment, conformity route by product class and the Article 14 reporting clock (24h, 72h, final report). Zero runtime dependencies, nothing uploaded.",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "cra-readiness": "dist/src/cli.js" },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/src/server-main.js",
+    "test": "tsc && node --test dist/test/*.test.js"
+  },
+  "repository": "github:jvch0512/cra-readiness",
+  "keywords": ["cra", "cyber-resilience-act", "sbom", "cyclonedx", "spdx", "compliance", "vulnerability-reporting", "pre-sales", "typescript"],
+  "devDependencies": { "@types/node": "^22.0.0", "typescript": "^5.6.0" },
+  "engines": { "node": ">=20" }
+}
